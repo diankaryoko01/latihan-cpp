@@ -9,42 +9,41 @@ int main() {
     do {
         srand(time(0));
 
-        int attempt = 1;
         int random_number = rand() % 51;
+        int attempt = 1;
         
         cout << "====== Number Guessing Game ======" << endl;
         cout << "1. Start Game" << endl;
         cout << "2. Exit" << endl;
         cout << "Choose an option: ";
-
         cin >> chosen_number;
 
         switch(chosen_number) {
             case 1: 
-                cout << endl << "I have selected a number between 1 and 50. You have 5 tries." << endl << endl;
+                cout << "\nI have selected a number between 1 and 50. You have 5 tries.\n\n";
                 for(int attempt_number = 0; attempt_number != random_number && attempt < 6; attempt += 1) {
                     cout << "Attempt " << attempt << ": Enter your guess: ";
                     cin >> attempt_number;
 
                     if(attempt_number == random_number) {
-                        cout << "Congratulations! You guessed it in " << attempt << " attempts!" << endl << endl;
+                        cout << "Congratulations! You guessed it in " << attempt << " attempts!\n\n";
                     }
                     else if(attempt_number > random_number && attempt < 5) {
-                        cout << "Too high!" << endl << endl;
+                        cout << "Too high!\n\n";
                     }
                     else if(attempt_number < random_number && attempt < 5) {
-                        cout << "Too low!" << endl << endl;
+                        cout << "Too low!\n\n";
                     }
                     else if(attempt_number > random_number && attempt == 5) {
-                        cout << "Too high!" << endl << "Sorry, you've used all your attempts. The correct number was: " << random_number << endl;
+                        cout << "Too high!\nSorry, you've used all your attempts. The correct number was: " << random_number << "\n\n";
                     }
                     else if(attempt_number < random_number && attempt == 5) {
-                        cout << "Too low!" << endl << "Sorry, you've used all your attempts. The correct number was: " << random_number << endl;
+                        cout << "Too low!\nSorry, you've used all your attempts. The correct number was: " << random_number << "\n\n";
                     }
                 }
                 break;
             case 2: 
-                cout << "Bye, see you next time!" << endl << endl;
+                cout << "Bye, see you next time!\n\n";
                 break;
         }
     } while(chosen_number == 1);
