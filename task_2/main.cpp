@@ -25,7 +25,10 @@ int main() {
                     cout << "Attempt " << attempt << ": Enter your guess: ";
                     cin >> attempt_number;
 
-                    if(attempt_number == random_number) {
+                    if(attempt_number < 1 || attempt_number > 50) {
+                        cout << "Your guess is out of range. The selected number is between 1 and 50. Try again!\n\n";
+                    }
+                    else if(attempt_number == random_number) {
                         cout << "Congratulations! You guessed it in " << attempt << " attempts!\n\n";
                     }
                     else if(attempt_number > random_number && attempt < 5) {
@@ -45,8 +48,11 @@ int main() {
             case 2: 
                 cout << "Bye, see you next time!\n\n";
                 break;
+            default:
+                cout << "Invalid input. Please only choose number 1 or 2.\n\n";
+                break;
         }
-    } while(chosen_number == 1);
+    } while(chosen_number != 2);
 
     return 0;
 }
