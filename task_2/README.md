@@ -1,4 +1,4 @@
-# Task 3 - Guess the number 🔍
+# Task 2 - Guess the number 🔍
 
 ## Background story
 
