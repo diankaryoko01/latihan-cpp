@@ -9,7 +9,7 @@ int main() {
     do {
         srand(time(0));
 
-        int random_number = rand() % 51;
+        int random_number = (rand() % 50) + 1;
         int attempt = 1;
         
         cout << "====== Number Guessing Game ======" << endl;
@@ -27,6 +27,7 @@ int main() {
 
                     if(attempt_number < 1 || attempt_number > 50) {
                         cout << "Your guess is out of range. The selected number is between 1 and 50. Try again!\n\n";
+                        attempt -= 1;
                     }
                     else if(attempt_number == random_number) {
                         cout << "Congratulations! You guessed it in " << attempt << " attempts!\n\n";
